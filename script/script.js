@@ -55,7 +55,6 @@ const noJobRej = document.getElementById("no-job-rej");
 
 
 document.getElementById("cards-container").addEventListener('click', function(event){
-    // hide no jobs
     
 
     const targetElement = event.target;
@@ -85,7 +84,8 @@ document.getElementById("cards-container").addEventListener('click', function(ev
         UpdateState();
     
     } 
-
+    
+    // job count status 
     cardCount.innerText = document.querySelectorAll(".job-card").length;
 
 })
