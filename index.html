@@ -24,7 +24,7 @@
     }
 </style>
 </head>
-<body class="max-w-max mx-auto">
+<body class="max-w-6xl mx-auto px-4">
 
     <!-- Header Section -->
     <section class="header mt-16">
@@ -34,19 +34,19 @@
             <div class="card w-100 h-28  card-xs shadow-sm">
             <div class="card-body">
                 <p class="text-lg">Total</p>
-                <h2 class="text-neutral font-bold text-2xl">8</h2>
+                <h2 id="count-all" class="text-neutral font-bold text-2xl">8</h2>
             </div>
         </div>
         <div class="card w-100 h-28 card-xs shadow-sm">
             <div class="card-body">
                 <p class="text-lg">Interview</p>
-                <h2 class="text-green-400 font-bold text-2xl">0</h2>
+                <h2 id="count-interview" class="text-green-400 font-bold text-2xl">0</h2>
             </div>
         </div>
         <div class="card w-100 h-28 card-xs shadow-sm">
             <div class="card-body">
                 <p class="text-lg">Rejected</p>
-                <h2 class="text-red-400 font-bold text-2xl">0</h2>
+                <h2 id="count-rejected" class="text-red-400 font-bold text-2xl">0</h2>
             </div>
         </div>
         </div>
@@ -62,329 +62,379 @@
 
         <div class="jobs-count flex justify-between">
             <h3 class="font-bold text-3xl">Available Jobs</h3>
-              <p class="text-gray-500 text-2xl">8 jobs</p>
+              <p class="text-gray-500 text-2xl"><span id="status"></span> <span id="cardCount">8</span> jobs</p>
         </div>
 
         <div class="flex btn-container mt-10 gap-3">
-            <button class="btn btn-primary px-22 py-8 font-bold text-2xl rounded-lg">All</button>
-            <button class="btn px-12 py-8 font-bold text-2xl rounded-lg">Interview</button>
-            <button class="btn px-12 py-8 font-bold text-2xl rounded-lg">Rejected</button>
+            <button onclick="showOnly('cards', 'btn-all')"
+            id="btn-all" class="btn btn-primary px-22 py-8 font-bold text-2xl rounded-lg">All</button>
+            <button onclick="showOnly('interview', 'btn-interview')"  id="btn-interview" class="btn px-12 py-8 font-bold text-2xl rounded-lg">Interview</button>
+            <button onclick="showOnly('rejected', 'btn-rejected')"
+            id="btn-rejected" class="btn px-12 py-8 font-bold text-2xl rounded-lg">Rejected</button>
            
         </div>
-             
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
 
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">TechFlow Solutions</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">Frontend Developer</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">Remote
- • 
-Full-time 
-•
- 	$95k - $120k</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">Building modern React interfaces for SaaS products.</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
-
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">Stellar Creative</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">UI/UX Designer</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">New York, NY
- • 
-Contract 
-•
- $$130k - $155k</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">Scaling Node.js microservices and database architecture.</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
-
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">GreenNode Systems</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">Backend Engineer</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">Austin, TX
- • 
-Full-time 
-•
- $130k - $155k</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">Scaling Node.js microservices and database architecture.</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
-
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">Peak Marketing</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">Data Analyst</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">Chicago, IL
- • 
-Part-time 
-•
- $45k - $55k</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">Interpreting market trends and creating BI dashboards.</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
-
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">CloudNine Corp</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">DevOps Specialist</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">Remote
- • 
-Full-time 
-•
- $140k - $170k</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">Managing AWS infrastructure and CI/CD pipelines.</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
-
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">Swift Logistics</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">Mobile Developer</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">Miami, FL
- • 
-Full-time 
-•
- $100k - $125k</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">Developing cross-platform apps using Flutter/React Native.</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
-
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">Boutique Media</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">Content Strategist</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">Los Angeles, CA
- • 
-Freelance 
-•
- 	$3,000/mo</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">	Leading digital brand campaigns and SEO strategy</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-base-200 text-neutral mt-8">
-          <div class="card-body">
-
-            <div class="flex items-center justify-between">
-                <h3 class="card-title font-bold text-3xl">Horizon Health</h3>
-
-                <button class="w-14 h-14 bg-gray-200 rounded-full">
-                    <i class="fa-regular fa-trash-can text-4xl "></i>
-                </button>
-            </div>
-                
-
-
-                <p class="text-gray-500 text-2xl">QA Engineer</p>
-                
-                <br>
-
-                <p class="text-gray-500 text-2xl">Boston, MA
- • 
-Full-time 
-•
- $85k - $110k</p>
-
-                    <div class="">
-                        <p class="inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
-                    </div>
-
-                    <br>
-
-                    <p class="text-2xl">Ensuring software reliability through automated testing.</p>
-
-                    <br>
-               
-                <div class="card-actions">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500">Interview</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl text-red-500 border-red-500">Responsive</button>
-                </div>
-            </div>
-        </div>
     </section>
+
+    <div id="cards-container">
+        <section id="cards">
+                 
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">TechFlow Solutions</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">Frontend Developer</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">Remote
+     • 
+    Full-time 
+    •
+         $95k - $120k</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">Building modern React interfaces for SaaS products.</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">Stellar Creative</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">UI/UX Designer</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">New York, NY
+     • 
+    Contract 
+    •
+     $$130k - $155k</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">Scaling Node.js microservices and database architecture.</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">GreenNode Systems</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">Backend Engineer</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">Austin, TX
+     • 
+    Full-time 
+    •
+     $130k - $155k</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">Scaling Node.js microservices and database architecture.</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">Peak Marketing</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">Data Analyst</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">Chicago, IL
+     • 
+    Part-time 
+    •
+     $45k - $55k</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">Interpreting market trends and creating BI dashboards.</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">CloudNine Corp</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">DevOps Specialist</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">Remote
+     • 
+    Full-time 
+    •
+     $140k - $170k</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">Managing AWS infrastructure and CI/CD pipelines.</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">Swift Logistics</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+            
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">Mobile Developer</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">Miami, FL
+     • 
+    Full-time 
+    •
+     $100k - $125k</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">Developing cross-platform apps using Flutter/React Native.</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">Boutique Media</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">Content Strategist</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">Los Angeles, CA
+     • 
+    Freelance 
+    •
+         $3,000/mo</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">	Leading digital brand campaigns and SEO strategy</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-200 text-neutral mt-8 job-card">
+              <div class="card-body">
+    
+                <div class="flex items-center justify-between">
+                    <h3 class="card-title font-bold text-3xl">Horizon Health</h3>
+    
+                    <button class="w-14 h-14 bg-gray-200 rounded-full delete">
+                        <i class="fa-regular fa-trash-can text-4xl pointer-events-none"></i>
+                    </button>
+                </div>
+                    
+    
+    
+                    <p class="text-gray-500 text-2xl">QA Engineer</p>
+                    
+                    <br>
+    
+                    <p class="text-gray-500 text-2xl">Boston, MA
+     • 
+    Full-time 
+    •
+     $85k - $110k</p>
+    
+                        <div class="">
+                            <p class="active-stat inline-block px-8 py-4 bg-slate-300 text-neutral text-2xl tracking-widest rounded">Not Applied</p>
+                        </div>
+    
+                        <br>
+    
+                        <p class="text-2xl">Ensuring software reliability through automated testing.</p>
+    
+                        <br>
+                   
+                    <div class="card-actions">
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-green-500 border-green-500 interview">Interview</button>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl px-10 text-red-500 border-red-500 rejected">Rejected</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="no-job-all" class="card bg-base-200 text-neutral mt-8">
+              <div class="card-body">
+                <img class="size-28              mx-auto mt-28" src="assets/jobs.png" alt="">
+    
+                <h1 class="text-neutral font-bold text-4xl mx-auto mt-5">No jobs available</h1>
+    
+                <p class="text-gray-500 text-2xl mx-auto">Check back soon for new job opportunities</p> 
+                       
+                </div>
+            </div>
+    
+        </section>    
+    
+        <section id="interview" class="hidden">
+            <div id="no-job-int" class="card bg-base-200 text-neutral mt-8">
+              <div class="card-body">
+                <img class="size-28              mx-auto mt-28" src="assets/jobs.png" alt="">
+    
+                <h1 class="text-neutral font-bold text-4xl mx-auto mt-5">No jobs available</h1>
+    
+                <p class="text-gray-500 text-2xl mx-auto">Check back soon for new job opportunities</p> 
+                       
+                </div>
+            </div>
+        </section>
+        <section id="rejected" class="hidden">
+            <div id="no-job-rej" class="card bg-base-200 text-neutral mt-8">
+              <div class="card-body">
+                <img class="size-28              mx-auto mt-28" src="assets/jobs.png" alt="">
+    
+                <h1 class="text-neutral font-bold text-4xl mx-auto mt-5">No jobs available</h1>
+    
+                <p class="text-gray-500 text-2xl mx-auto">Check back soon for new job opportunities</p> 
+                       
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="script/machine.js"></script>
+    <script src="script/interview.js"></script>
 
 </body>
 </html>
